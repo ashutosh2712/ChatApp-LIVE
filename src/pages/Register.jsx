@@ -19,7 +19,7 @@ const Register = () => {
 
     try{
       const res = await createUserWithEmailAndPassword(auth, email, password);
-      
+
       const storageRef = ref(storage, displayName);
       const uploadTask = uploadBytesResumable(storageRef, file)
       
@@ -39,7 +39,6 @@ const Register = () => {
               email,
               photoURL : downloadURL
             });
-
             await setDoc(doc(db, "userChats", res.user.uid), {});
             navigate("/");
           });
@@ -64,7 +63,7 @@ const Register = () => {
                 <label htmlFor="file"><img src={Add} alt="Add User" />
                 <span>Add an Avatar</span></label>
                 <button>Sign up</button>
-                {err && <span style={{color:"red"}}> Something went wrong</span>}
+                {err && <span style={{color:"red"}}> *Something went wrong</span>}
             </form>
             <p>You do have an account? <Link to="/login">Login</Link></p>
         </div>
