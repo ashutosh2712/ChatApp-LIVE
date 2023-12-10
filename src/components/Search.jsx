@@ -43,7 +43,7 @@ const Search = () => {
         [combinedId+".userInfo"] : {
           uid: user.uid,
           displayName:user.displayName,
-          phptpURL :user.photoURL
+          photoURL:user.photoURL
         },
         [combinedId+".date"] :serverTimestamp()
       });
@@ -52,19 +52,20 @@ const Search = () => {
         [combinedId+".userInfo"] : {
           uid: currentUser.uid,
           displayName:currentUser.displayName,
-          phptpURL :currentUser.photoURL
+          photoURL:currentUser.photoURL
         },
         [combinedId+".date"] :serverTimestamp()
       });
       
     }
   }catch(err) {}
-    
+    setUser(null);
+    setUsername("");
   }
   return (
     <div className='search'>
         <div className="search-form">
-            <input type="text" placeholder='Find user..' onKeyDown={handleKey} onChange={(e) => setUsername(e.target.value)}/>
+            <input type="text" placeholder='Find user..' onKeyDown={handleKey} onChange={(e) => setUsername(e.target.value)} value={username}/>
         </div>
             {err && <span style={{color:"red"}}>*User Not Found</span>}
             {user && <div className="user-chat" onClick={handleSelect}>
