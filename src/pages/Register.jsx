@@ -61,11 +61,11 @@ const Register = () => {
                 <input type="password" placeholder='password'/>
                 <input type="file" id='file'/>
                 <label htmlFor="file"><img src={Add} alt="Add User" />
-                <span>Add an Avatar</span></label>
+                <span>Add Profile</span></label>
                 <button>Sign up</button>
-                {err && <span style={{color:"red"}}> *Something went wrong</span>}
+                {err && <span style={{color:"red"}}> *Somthing missing</span>}
             </form>
-            <p>You do have an account? <Link to="/login">Login</Link></p>
+            <p>Already have an account? <Link to="/login">Login</Link></p>
         </div>
         </div>
   )

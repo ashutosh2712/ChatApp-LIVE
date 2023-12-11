@@ -29,9 +29,9 @@ const Register = () => {
                 <input type="email" placeholder='email'/>
                 <input type="password" placeholder='password'/>
                 <button>Login</button>
-                {err && <span style={{color:"red"}}> Something went wrong</span>}
+                {err && <span style={{color:"red"}}> *Email id or password incorrect</span>}
             </form>
-            <p>Dont have an account? <Link to="/register">Sign in</Link></p>
+            <p>Don't have an account? <Link to="/register">Register</Link></p>
         </div>
         </div>
   )
