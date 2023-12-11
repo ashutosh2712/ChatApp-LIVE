@@ -1,5 +1,4 @@
 import React, { useContext, useEffect, useState } from 'react'
-import profile from '../assets/profileF.jpg'
 import { doc, onSnapshot } from 'firebase/firestore';
 import { db } from '../firebase';
 import { AuthContext } from '../context/AuthContext';
@@ -26,6 +25,7 @@ const Chats = () => {
   const handleSelect = (u) => {
     dispatch({ type:"CHANGE_USER", payload: u })
   }
+  console.log(Object.entries(chats));
   return (
     <div className='chats'>
         {Object.entries(chats)?.sort((a,b)=>b[1].date - a[1].date).map(chat=>(
