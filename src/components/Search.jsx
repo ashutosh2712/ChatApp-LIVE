@@ -26,7 +26,9 @@ const Search = () => {
   };
 
   const handleKey = (e) => {
-    e.code === "Enter" && handleSearch();
+    if (e.code === "Enter" || e.code === "ArrowRight" || e.code === "ArrowDown") {
+      handleSearch();
+    }
   };
   const handleSelect =async () => {
     // check chat group(chat collection in firestore) exists ,if not create new one
