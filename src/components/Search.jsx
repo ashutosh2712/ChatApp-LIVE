@@ -30,6 +30,10 @@ const Search = () => {
       handleSearch();
     }
   };
+  const handleInput = (e) => {
+    handleSearch();
+  };
+
   const handleSelect =async () => {
     // check chat group(chat collection in firestore) exists ,if not create new one
     const combinedId =  currentUser.uid > user.uid ? currentUser.uid + user.uid : user.uid + currentUser.uid ;
@@ -67,7 +71,11 @@ const Search = () => {
   return (
     <div className='search'>
         <div className="search-form">
-            <input type="text" placeholder='Find user..' onKeyDown={handleKey} onChange={(e) => setUsername(e.target.value)} value={username}/>
+            <input type="text" placeholder='Find user..' 
+            onKeyDown={handleKey} 
+            onInput={handleInput} 
+            onChange={(e) => setUsername(e.target.value)} value={username}
+            />
         </div>
             {err && <span style={{color:"red"}}>*User not found</span>}
             {user && <div className="user-chat" onClick={handleSelect}>
