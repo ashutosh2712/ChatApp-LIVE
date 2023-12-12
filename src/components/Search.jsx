@@ -26,7 +26,7 @@ const Search = () => {
   };
 
   const handleKey = (e) => {
-    if (e.code === "Enter" || e.code === "ArrowRight" || e.code === "ArrowDown") {
+    if (e.code === "Enter" || e.code === "ArrowRight" || e.code === "Space") {
       handleSearch();
     }
   };
